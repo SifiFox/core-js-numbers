@@ -623,15 +623,14 @@ function getHypotenuse(a, b) {
  * 15 => 8
  */
 function getCountOfOddNumbers(number) {
-  let bufNum = number;
-  let oddCount = 0;
-  while (bufNum !== 0) {
-    if (bufNum % 2 === 0) {
-      oddCount += 1;
-      bufNum -= 1;
+  const bufNum = number < 0 ? number * -1 : number;
+  const odds = [];
+  for (let i = 0; i < bufNum; i += 1) {
+    if (i % 2 === 0) {
+      odds.push(i);
     }
   }
-  return oddCount;
+  return odds.length;
 }
 
 module.exports = {
